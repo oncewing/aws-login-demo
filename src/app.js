@@ -32,7 +32,7 @@ let lockedUsername = "";
 
 /** ===== Init Amplify ===== */
 async function initAmplify() {
-  const res = await fetch("public/amplify_outputs.json", { cache: "no-store" });
+  const res = await fetch("/amplify_outputs.json", { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to load amplify_outputs.json");
   const outputs = await res.json();
   Amplify.configure(outputs);
